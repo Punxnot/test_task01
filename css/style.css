@@ -16,7 +16,7 @@ body {
   color: #4c4c4c;
 }
 
-p, h1, h2, h3, h4, h5 {
+p, h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
 }
@@ -63,14 +63,14 @@ header {
 
 .name {
   margin-bottom: 10px;
-  font-size: 28px;
+  font-size: 1.8em;
   font-weight: 400;
 }
 
 .address,
 .languages {
   margin-bottom: 5px;
-  font-size: 14px;
+  font-size: 0.9em;
   font-weight: 700;
 }
 
@@ -83,9 +83,10 @@ header {
   display: inline-block;
   vertical-align: middle;
   margin-right: 5px;
+  margin-bottom: 5px;
   padding: 2px 7px;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 0.8rem;
   color: white;
 }
 .skill.strong {
@@ -100,10 +101,15 @@ header {
 
 .close {
   position: absolute;
-  top: 3px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
   right: 0;
-  width: 15px;
-  height: 15px;
+  width: 1rem;
+  height: 1rem;
+  font-size: 0;
+  line-height: 1rem;
   border-radius: 50%;
   background: red;
   text-align: center;
@@ -114,10 +120,11 @@ header {
 .close::before {
   content: '×';
   display: inline-block;
-  vertical-align: middle;
-  margin-top: -7px;
+  vertical-align: top;
+  margin: 0;
+  padding: 0;
   color: white;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .skill:hover .close {
@@ -143,7 +150,7 @@ header {
   width: 240px;
   height: 240px;
   overflow-y: auto;
-  font-size: 12px;
+  font-size: 0.8em;
   border: 1px solid #e6e6e6;
 }
 .item ul {
@@ -153,10 +160,10 @@ header {
 .item > p {
   padding: 10px 20px;
 }
-.item h3 {
+.item section {
   margin: 10px 20px 0 20px;
   text-align: center;
-  font-size: 14px;
+  font-size: 1.2em;
 }
 
 .sample-code {
@@ -167,15 +174,15 @@ header {
   text-align: center;
 }
 
-h3.item-title {
+section.item-title {
   min-height: 75px;
   margin: 0;
   padding: 20px;
   font-weight: 700;
   background-color: rgba(255, 255, 255, 0.9);
 }
-h3.item-title .additional {
-  font-size: 12px;
+section.item-title .additional {
+  font-size: 0.8em;
   font-weight: 400;
   color: #7e7e7e;
 }
@@ -183,20 +190,24 @@ h3.item-title .additional {
 .availability {
   margin-top: 20px;
   text-align: center;
-  font-size: 24px;
+  font-size: 1.6em;
   font-weight: 700;
 }
 
 .divided .item-title {
-  border-bottom: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e6e6e6;
 }
 .divided .item-title:last-of-type {
   padding-bottom: 0;
   border-bottom: none;
 }
 
-.quote::before,
-.quote::after {
+.quote p {
+  position: relative;
+}
+
+.quote p::before,
+.quote p::after {
   content: '';
   position: absolute;
   width: 30px;
@@ -207,13 +218,13 @@ h3.item-title .additional {
   z-index: 0;
 }
 
-.quote::before {
-  top: 60px;
+.quote p::before {
+  top: -20px;
   left: 10px;
 }
 
-.quote::after {
-  bottom: 10px;
+.quote p::after {
+  bottom: -5px;
   right: 10px;
   -webkit-transform: scale(-1);
       -ms-transform: scale(-1);
@@ -222,9 +233,6 @@ h3.item-title .additional {
 
 .quote p {
   font-style: italic;
-}
-.quote p::before {
-  content: '... ';
 }
 
 .quote-author {
@@ -243,7 +251,7 @@ h3.item-title .additional {
   border-radius: 10px;
   color: white;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 0.8em;
 }
 
 input[type=text] {
@@ -261,23 +269,23 @@ input[type=text] {
 
 .name + input[type=text] {
   margin-bottom: 10px;
-  font-size: 28px;
+  font-size: 1.8em;
   font-weight: 400;
 }
 
 .address + input[type=text],
 .languages + input[type=text] {
   margin-bottom: 5px;
-  font-size: 14px;
+  font-size: 0.9em;
   font-weight: 700;
 }
 
 .add-skills + input[type=text] {
   width: 255px;
   margin-top: 10px;
-  padding-right: 100px;
+  padding-right: 120px;
   color: #7e7e7e;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   outline: 1px solid #2ecc71;
 }
@@ -294,10 +302,13 @@ input[type=text] {
 }
 .add-skills-container .add-skills-button {
   position: absolute;
-  top: 3px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
   right: 6px;
-  width: 15px;
-  height: 15px;
+  width: 0.9rem;
+  height: 0.9rem;
   border-radius: 50%;
   background-color: #2ecc71;
   cursor: pointer;
@@ -307,7 +318,7 @@ input[type=text] {
   content: 'L';
   display: block;
   color: white;
-  font-size: 10px;
+  font-size: 0.6rem;
   text-align: center;
   -webkit-transform: scaleX(-1) rotate(-45deg);
       -ms-transform: scaleX(-1) rotate(-45deg);
