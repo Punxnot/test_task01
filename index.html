@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test project</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <article>
+      <header class="flex-container">
+        <img class="user-image" width="240" height="240" src="http://farm9.static.flickr.com/8250/8661901879_a2dbfd5951_m.jpg" alt="userpic">
+        <section class="info">
+          <form>
+            <input type="hidden" name="hiddenField">
+          </form>
+          <h2 class="name editable" id="name">John Smith</h2>
+          <div class="address editable">Portland, Oregon, USA</div>
+          <div class="languages editable">English</div>
+          <div class="skills" id="skillsContainer">
+            <div class="skill strong">
+              PHP
+              <span class="close"></span>
+            </div>
+            <div class="skill strong">
+              Ruby
+              <span class="close"></span>
+            </div>
+            <div class="skill medium">
+              JavaScript
+              <span class="close"></span>
+            </div>
+            <div class="skill weak">
+              ActionScript
+              <span class="close"></span>
+            </div>
+          </div>
+          <div class="add-skills-container">
+            <div class="add-skills">Add skills</div>
+            <select>
+              <option value="strong">Strong</option>
+              <option value="medium">Medium</option>
+              <option value="weak">Weak</option>
+            </select>
+            <span class="add-skills-button" id="addSkillBtn"></span>
+          </div>
+        </section>
+        <div class="buttons">
+          <button class="btn btn-print" type="button" onclick="window.print()">Print this page</button>
+        </div>
+      </header>
+      <main class="clearfix">
+        <div class="item">
+          <h3 class="item-title">
+            Portfolio
+            <div class="additional">PHT, Ruby, Javascript</div>
+          </h3>
+          <ul>
+            <li><b>NavalPlan</b>, PHP, Ruby</li>
+            <li><b>MyTime</b>, Javascript</li>
+            <li><b>Formidable</b>, PHP, Ruby</li>
+            <li><b>MyTime</b>, Javascript</li>
+            <li><b>Monsoon</b>, ActionScript</li>
+          </ul>
+        </div>
+        <div class="item">
+          <h3 class="item-title">Experience</h3>
+          <ul>
+            <li><b>PHP</b>, 6 years</li>
+            <li><b>Ruby</b>, 7 years</li>
+            <li><b>Javascript</b>, 4 years</li>
+            <li><b>ActionScript</b>, 3 years</li>
+          </ul>
+        </div>
+        <div class="item sample-code">
+          <h3 class="item-title">Sample code and algorithms</h3>
+        </div>
+        <div class="item divided">
+          <h3 class="item-title">
+            Availability
+            <div class="availability">Full-time</div>
+          </h3>
+          <h3>Preferred environment</h3>
+          <p class="environment">Git, GitHub, vim, emacs, Jenkins, Mac OSX</p>
+        </div>
+        <div class="item quote">
+          <h3 class="item-title">The most amazing...</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua et dolore magna aliqua et dol ut labore et dolore
+            <b class="quote-author">- Martin</b>
+          </p>
+        </div>
+        <div class="item quote">
+          <h3 class="item-title">In clients I look for...</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua et dolore magna aliqua et dol ut labore et dolore
+            <b class="quote-author">- Martin</b>
+          </p>
+        </div>
+        <div class="item"></div>
+        <div class="item quote">
+          <h3 class="item-title">Note</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua et dolore magna aliqua et dol ut labore et dolore</p>
+        </div>
+      </main>
+    </article>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="all.js"></script>
+  </body>
+</html>

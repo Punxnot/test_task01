@@ -1,0 +1,315 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 400;
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 700;
+  src: url(../fonts/Roboto-Bold.ttf);
+}
+body {
+  margin: 0;
+  padding: 10px;
+  font-family: 'Roboto', 'Arial', sans-serif;
+  color: #4c4c4c;
+}
+
+p, h1, h2, h3, h4, h5 {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.flex-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+
+article {
+  width: 960px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #e6e6e6;
+}
+
+.info,
+.buttons {
+  padding: 20px 30px;
+}
+
+.info {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 480px;
+          flex: 0 0 480px;
+  padding-right: 0;
+}
+
+.name {
+  margin-bottom: 10px;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.address,
+.languages {
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.skills {
+  font-size: 0;
+}
+
+.skill {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+  padding: 2px 7px;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: white;
+}
+.skill.strong {
+  background: #000000;
+}
+.skill.medium {
+  background: #5c5c5c;
+}
+.skill.weak {
+  background: #a2a2a2;
+}
+
+.close {
+  position: absolute;
+  top: 3px;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: red;
+  text-align: center;
+  cursor: pointer;
+  display: none;
+}
+
+.close::before {
+  content: '×';
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -7px;
+  color: white;
+  font-size: 16px;
+}
+
+.skill:hover .close {
+  display: block;
+}
+
+.add-skills {
+  margin-top: 10px;
+  color: #7e7e7e;
+  cursor: pointer;
+}
+
+.buttons {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 240px;
+          flex: 0 0 240px;
+  text-align: right;
+}
+
+.item {
+  position: relative;
+  float: left;
+  width: 240px;
+  height: 240px;
+  overflow-y: auto;
+  font-size: 12px;
+  border: 1px solid #e6e6e6;
+}
+.item ul {
+  margin: 0;
+  padding-left: 30px;
+}
+.item > p {
+  padding: 10px 20px;
+}
+.item h3 {
+  margin: 10px 20px 0 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.sample-code {
+  background: url(../img/sample_code.png);
+}
+
+.environment {
+  text-align: center;
+}
+
+h3.item-title {
+  min-height: 75px;
+  margin: 0;
+  padding: 20px;
+  font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+h3.item-title .additional {
+  font-size: 12px;
+  font-weight: 400;
+  color: #7e7e7e;
+}
+
+.availability {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.divided .item-title {
+  border-bottom: 1px solid #e7e7e7;
+}
+.divided .item-title:last-of-type {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.quote::before,
+.quote::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url(http://www.sailingeurope.com/css/img/Quote.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  z-index: 0;
+}
+
+.quote::before {
+  top: 60px;
+  left: 10px;
+}
+
+.quote::after {
+  bottom: 10px;
+  right: 10px;
+  -webkit-transform: scale(-1);
+      -ms-transform: scale(-1);
+          transform: scale(-1);
+}
+
+.quote p {
+  font-style: italic;
+}
+.quote p::before {
+  content: '... ';
+}
+
+.quote-author {
+  display: block;
+  margin: 10px 0;
+  text-align: right;
+  font-style: normal;
+}
+
+.btn-print {
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #000000;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+input[type=text] {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: #4c4c4c;
+  outline: 1px solid #bababa;
+  outline-offset: 2px;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+.name + input[type=text] {
+  margin-bottom: 10px;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.address + input[type=text],
+.languages + input[type=text] {
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.add-skills + input[type=text] {
+  width: 255px;
+  margin-top: 10px;
+  padding-right: 100px;
+  color: #7e7e7e;
+  font-size: 16px;
+  font-weight: 400;
+  outline: 1px solid #2ecc71;
+}
+
+.add-skills-container {
+  position: relative;
+  width: 255px;
+}
+.add-skills-container select {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  display: none;
+}
+.add-skills-container .add-skills-button {
+  position: absolute;
+  top: 3px;
+  right: 6px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #2ecc71;
+  cursor: pointer;
+  display: none;
+}
+.add-skills-container .add-skills-button::before {
+  content: 'L';
+  display: block;
+  color: white;
+  font-size: 10px;
+  text-align: center;
+  -webkit-transform: scaleX(-1) rotate(-45deg);
+      -ms-transform: scaleX(-1) rotate(-45deg);
+          transform: scaleX(-1) rotate(-45deg);
+}
