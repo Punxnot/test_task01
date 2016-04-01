@@ -14,9 +14,21 @@
           <form>
             <input type="hidden" name="hiddenField">
           </form>
-          <h2 class="name editable" id="name">John Smith</h2>
-          <div class="address editable">Portland, Oregon, USA</div>
-          <div class="languages editable">English</div>
+          <div class="name-container">
+            <h2 class="name editable" id="name">John Smith</h2>
+            <span class="ok-button"></span>
+            <span class="close"></span>
+          </div>
+          <div class="address-container">
+            <div class="address editable">Portland, Oregon, USA</div>
+            <span class="ok-button"></span>
+            <span class="close"></span>
+          </div>
+          <div class="languages-container">
+            <div class="languages editable">English</div>
+            <span class="ok-button"></span>
+            <span class="close"></span>
+          </div>
           <div class="skills" id="skillsContainer">
             <div class="skill strong">
               PHP
@@ -42,7 +54,7 @@
               <option value="medium">Medium</option>
               <option value="weak">Weak</option>
             </select>
-            <span class="add-skills-button" id="addSkillBtn"></span>
+            <span class="ok-button" id="addSkillBtn"></span>
           </div>
         </section>
         <div class="buttons">

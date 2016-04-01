@@ -61,6 +61,17 @@ header {
   padding-right: 0;
 }
 
+.user-image {
+  flex: 0 0 240px;
+  width: 240px;
+}
+
+.name-container,
+.address-container,
+.languages-container {
+  position: relative;
+}
+
 .name {
   margin-bottom: 10px;
   font-size: 1.8em;
@@ -134,8 +145,14 @@ header {
 
 .add-skills {
   margin-top: 10px;
+  padding: 3px 0;
+  border: 1px solid transparent;
   color: $text-muted;
   cursor: pointer;
+
+  &:hover {
+    border-color: #bababa;
+  }
 }
 
 .buttons {
@@ -225,22 +242,18 @@ section.item-title {
 }
 
 .quote p::before {
-  top: -20px;
+  top: 0;
   left: 10px;
 }
 
 .quote p::after {
-  bottom: -5px;
+  bottom: 0;
   right: 10px;
   transform: scale(-1);
 }
 
 .quote p {
   font-style: italic;
-
-  // &::before {
-  //   content: '... ';
-  // }
 }
 
 .quote-author {
@@ -262,21 +275,30 @@ section.item-title {
   font-size: 0.8em;
 }
 
+.editable {
+  padding-left: 5px;
+  border: 1px solid transparent;
+}
+
+.editable:hover {
+  border-color: #bababa;
+}
+
 input[type=text] {
   display: block;
   width: 100%;
   margin: 0;
   padding: 0;
   color: $text-color;
-  outline: 1px solid #bababa;
-  outline-offset: 2px;
-  background: transparent;
+  border: 1px solid #bababa;
+  outline: none;
+  background: white;
   box-shadow: none;
-  border: none;
 }
 
 .name + input[type=text] {
   margin-bottom: 10px;
+  padding: 0 5px;
   font-size: 1.8em;
   font-weight: 400;
 }
@@ -284,6 +306,7 @@ input[type=text] {
 .address + input[type=text],
 .languages + input[type=text] {
   margin-bottom: 5px;
+  padding: 0 5px;
   font-size: 0.9em;
   font-weight: 700;
 }
@@ -291,11 +314,13 @@ input[type=text] {
 .add-skills + input[type=text] {
   width: 255px;
   margin-top: 10px;
+  padding: 3px 5px;
   padding-right: 120px;
   color: $text-muted;
+  outline: none;
   font-size: 1rem;
   font-weight: 400;
-  outline: 1px solid $green;
+  border: 1px solid $green;
 }
 
 .add-skills-container {
@@ -304,30 +329,48 @@ input[type=text] {
 
   select {
     position: absolute;
-    top: 0;
+    top: 50%;
     right: 30px;
+    transform: translateY(-50%);
+    margin: 0;
     display: none;
   }
+}
 
-  .add-skills-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 6px;
-    width: 0.9rem;
-    height: 0.9rem;
-    border-radius: 50%;
+.ok-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 6px;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background-color: $gray-main;
+  cursor: pointer;
+  transition: background-color .3s;
+  display: none;
+
+  &::before {
+    content: 'L';
+    display: block;
+    color: white;
+    font-size: 0.6rem;
+    line-height: 0.7rem;
+    text-align: center;
+    transform: scaleX(-1) rotate(-45deg);
+  }
+
+  &:hover {
     background-color: $green;
-    cursor: pointer;
-    display: none;
+  }
+}
 
-    &::before {
-      content: 'L';
-      display: block;
-      color: white;
-      font-size: 0.6rem;
-      text-align: center;
-      transform: scaleX(-1) rotate(-45deg);
-    }
+.editable ~ .close {
+  right: 25px;
+  background-color: $gray-main;
+  transition: background-color .3s;
+
+  &:hover {
+    background-color: red;
   }
 }

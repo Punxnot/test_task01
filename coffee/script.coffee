@@ -1,16 +1,29 @@
+# Editable text
 $.fn.inlineEdit = (replaceWith, connectWith)->
   elem = $(this)
+  okBtn = elem.siblings(".ok-button")
+  closeBtn = elem.siblings(".close")
   elem.hide()
+  okBtn.show()
+  closeBtn.show()
   elem.after(replaceWith)
   replaceWith.focus()
   replaceWith.val(elem.text())
-  replaceWith.blur ->
-    if $(this).val() != ""
-      connectWith.val($(this).val()).change()
-      elem.text($(this).val())
-    $(this).remove()
+  okBtn.click ->
+    if replaceWith.val() != ""
+      connectWith.val(replaceWith.val()).change()
+      elem.text(replaceWith.val())
+    replaceWith.remove()
+    okBtn.hide()
+    closeBtn.hide()
+    elem.show()
+  closeBtn.click ->
+    replaceWith.remove()
+    okBtn.hide()
+    closeBtn.hide()
     elem.show()
 
+# Add new skills
 $('.add-skills').click ->
   replaceWith = $("<input name='temp' type='text'>")
   select = $("select")
@@ -30,7 +43,9 @@ $('.add-skills').click ->
         removeParent(el)
       restoreDefault(replaceWith, select, $('#addSkillBtn'), elem)
   $('body').click (e)->
-    unless e.target.parentElement.classList.contains('add-skills-container')
+    selectClicked = e.target.parentElement.classList.contains('add-skills-container')
+    selectOptionClicked = e.target.parentElement.parentElement.classList.contains('add-skills-container')
+    unless selectClicked or selectOptionClicked
       restoreDefault(replaceWith, select, $('#addSkillBtn'), elem)
 
 restoreDefault = (replaceField, selectField, okBtn, elementToShow)->
@@ -40,7 +55,6 @@ restoreDefault = (replaceField, selectField, okBtn, elementToShow)->
   okBtn.hide()
   selectField.hide()
   elementToShow.show()
-
 
 $('.editable').click ->
   replaceWith = $("<input name='temp' type='text'>")
@@ -53,6 +67,6 @@ removeParent = (btn)->
   if elem.parentElement
     elem.parentElement.removeChild(elem)
 
-$('.close').click ->
+$('.skills .close').click ->
   removeParent(this)
   return false

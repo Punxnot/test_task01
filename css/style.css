@@ -61,6 +61,19 @@ header {
   padding-right: 0;
 }
 
+.user-image {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 240px;
+          flex: 0 0 240px;
+  width: 240px;
+}
+
+.name-container,
+.address-container,
+.languages-container {
+  position: relative;
+}
+
 .name {
   margin-bottom: 10px;
   font-size: 1.8em;
@@ -133,8 +146,13 @@ header {
 
 .add-skills {
   margin-top: 10px;
+  padding: 3px 0;
+  border: 1px solid transparent;
   color: #7e7e7e;
   cursor: pointer;
+}
+.add-skills:hover {
+  border-color: #bababa;
 }
 
 .buttons {
@@ -219,12 +237,12 @@ section.item-title .additional {
 }
 
 .quote p::before {
-  top: -20px;
+  top: 0;
   left: 10px;
 }
 
 .quote p::after {
-  bottom: -5px;
+  bottom: 0;
   right: 10px;
   -webkit-transform: scale(-1);
       -ms-transform: scale(-1);
@@ -254,21 +272,30 @@ section.item-title .additional {
   font-size: 0.8em;
 }
 
+.editable {
+  padding-left: 5px;
+  border: 1px solid transparent;
+}
+
+.editable:hover {
+  border-color: #bababa;
+}
+
 input[type=text] {
   display: block;
   width: 100%;
   margin: 0;
   padding: 0;
   color: #4c4c4c;
-  outline: 1px solid #bababa;
-  outline-offset: 2px;
-  background: transparent;
+  border: 1px solid #bababa;
+  outline: none;
+  background: white;
   box-shadow: none;
-  border: none;
 }
 
 .name + input[type=text] {
   margin-bottom: 10px;
+  padding: 0 5px;
   font-size: 1.8em;
   font-weight: 400;
 }
@@ -276,6 +303,7 @@ input[type=text] {
 .address + input[type=text],
 .languages + input[type=text] {
   margin-bottom: 5px;
+  padding: 0 5px;
   font-size: 0.9em;
   font-weight: 700;
 }
@@ -283,11 +311,13 @@ input[type=text] {
 .add-skills + input[type=text] {
   width: 255px;
   margin-top: 10px;
+  padding: 3px 5px;
   padding-right: 120px;
   color: #7e7e7e;
+  outline: none;
   font-size: 1rem;
   font-weight: 400;
-  outline: 1px solid #2ecc71;
+  border: 1px solid #2ecc71;
 }
 
 .add-skills-container {
@@ -296,11 +326,16 @@ input[type=text] {
 }
 .add-skills-container select {
   position: absolute;
-  top: 0;
+  top: 50%;
   right: 30px;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin: 0;
   display: none;
 }
-.add-skills-container .add-skills-button {
+
+.ok-button {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -310,17 +345,33 @@ input[type=text] {
   width: 0.9rem;
   height: 0.9rem;
   border-radius: 50%;
-  background-color: #2ecc71;
+  background-color: #e6e6e6;
   cursor: pointer;
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
   display: none;
 }
-.add-skills-container .add-skills-button::before {
+.ok-button::before {
   content: 'L';
   display: block;
   color: white;
   font-size: 0.6rem;
+  line-height: 0.7rem;
   text-align: center;
   -webkit-transform: scaleX(-1) rotate(-45deg);
       -ms-transform: scaleX(-1) rotate(-45deg);
           transform: scaleX(-1) rotate(-45deg);
+}
+.ok-button:hover {
+  background-color: #2ecc71;
+}
+
+.editable ~ .close {
+  right: 25px;
+  background-color: #e6e6e6;
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
+}
+.editable ~ .close:hover {
+  background-color: red;
 }

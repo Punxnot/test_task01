@@ -2,18 +2,30 @@
   var removeParent, restoreDefault;
 
   $.fn.inlineEdit = function(replaceWith, connectWith) {
-    var elem;
+    var closeBtn, elem, okBtn;
     elem = $(this);
+    okBtn = elem.siblings(".ok-button");
+    closeBtn = elem.siblings(".close");
     elem.hide();
+    okBtn.show();
+    closeBtn.show();
     elem.after(replaceWith);
     replaceWith.focus();
     replaceWith.val(elem.text());
-    return replaceWith.blur(function() {
-      if ($(this).val() !== "") {
-        connectWith.val($(this).val()).change();
-        elem.text($(this).val());
+    okBtn.click(function() {
+      if (replaceWith.val() !== "") {
+        connectWith.val(replaceWith.val()).change();
+        elem.text(replaceWith.val());
       }
-      $(this).remove();
+      replaceWith.remove();
+      okBtn.hide();
+      closeBtn.hide();
+      return elem.show();
+    });
+    return closeBtn.click(function() {
+      replaceWith.remove();
+      okBtn.hide();
+      closeBtn.hide();
       return elem.show();
     });
   };
@@ -43,7 +55,10 @@
       }
     });
     return $('body').click(function(e) {
-      if (!e.target.parentElement.classList.contains('add-skills-container')) {
+      var selectClicked, selectOptionClicked;
+      selectClicked = e.target.parentElement.classList.contains('add-skills-container');
+      selectOptionClicked = e.target.parentElement.parentElement.classList.contains('add-skills-container');
+      if (!(selectClicked || selectOptionClicked)) {
         return restoreDefault(replaceWith, select, $('#addSkillBtn'), elem);
       }
     });
@@ -73,7 +88,7 @@
     }
   };
 
-  $('.close').click(function() {
+  $('.skills .close').click(function() {
     removeParent(this);
     return false;
   });
