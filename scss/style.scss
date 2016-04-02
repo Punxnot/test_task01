@@ -27,6 +27,11 @@ p, h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
+h3 {
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -42,7 +47,8 @@ p, h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
 }
 
-article {
+header,
+main {
   width: 960px;
   margin: 0 auto;
 }
@@ -57,12 +63,13 @@ header {
 }
 
 .info {
-  flex: 0 0 480px;
+  float: left;
+  width: 480px;
   padding-right: 0;
 }
 
 .user-image {
-  flex: 0 0 240px;
+  float: left;
   width: 240px;
 }
 
@@ -145,7 +152,7 @@ header {
 
 .add-skills {
   margin-top: 10px;
-  padding: 3px 0;
+  padding: 3px 5px;
   border: 1px solid transparent;
   color: $text-muted;
   cursor: pointer;
@@ -156,7 +163,8 @@ header {
 }
 
 .buttons {
-  flex: 0 0 240px;
+  float: right;
+  width: 240px;
   text-align: right;
 }
 
@@ -171,6 +179,7 @@ header {
 
   ul {
     margin: 0;
+    padding: 10px;
     padding-left: 30px;
   }
 
@@ -181,7 +190,6 @@ header {
   section {
     margin: 10px 20px 0 20px;
     text-align: center;
-    font-size: 1.2em;
   }
 }
 
@@ -208,7 +216,6 @@ section.item-title {
 }
 
 .availability {
-  margin-top: 20px;
   text-align: center;
   font-size: 1.6em;
   font-weight: 700;
@@ -273,6 +280,12 @@ section.item-title {
   color: white;
   text-transform: uppercase;
   font-size: 0.8em;
+  // transition: filter .3s;
+
+  &:hover {
+    // filter: invert(100%);
+    filter: drop-shadow(-3px 3px 3px rgba(0, 0, 0, 0.5));
+  }
 }
 
 .editable {

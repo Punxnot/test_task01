@@ -7,115 +7,125 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <article>
-      <header class="flex-container">
-        <img class="user-image" width="240" height="240" src="http://farm9.static.flickr.com/8250/8661901879_a2dbfd5951_m.jpg" alt="userpic">
-        <section class="info">
-          <form>
-            <input type="hidden" name="hiddenField">
-          </form>
-          <div class="name-container">
-            <h2 class="name editable" id="name">John Smith</h2>
-            <span class="ok-button"></span>
+    <header class="clearfix">
+      <img class="user-image" width="240" height="240" src="http://farm9.static.flickr.com/8250/8661901879_a2dbfd5951_m.jpg" alt="userpic">
+      <section class="info">
+        <form>
+          <input type="hidden" name="hiddenField">
+        </form>
+        <div class="name-container">
+          <h2 class="name editable" id="name">John Smith</h2>
+          <span class="ok-button"></span>
+          <span class="close"></span>
+        </div>
+        <div class="address-container">
+          <div class="address editable">Portland, Oregon, USA</div>
+          <span class="ok-button"></span>
+          <span class="close"></span>
+        </div>
+        <div class="languages-container">
+          <div class="languages editable">English</div>
+          <span class="ok-button"></span>
+          <span class="close"></span>
+        </div>
+        <div class="skills" id="skillsContainer">
+          <div class="skill strong">
+            PHP
             <span class="close"></span>
           </div>
-          <div class="address-container">
-            <div class="address editable">Portland, Oregon, USA</div>
-            <span class="ok-button"></span>
+          <div class="skill strong">
+            Ruby
             <span class="close"></span>
           </div>
-          <div class="languages-container">
-            <div class="languages editable">English</div>
-            <span class="ok-button"></span>
+          <div class="skill medium">
+            JavaScript
             <span class="close"></span>
           </div>
-          <div class="skills" id="skillsContainer">
-            <div class="skill strong">
-              PHP
-              <span class="close"></span>
-            </div>
-            <div class="skill strong">
-              Ruby
-              <span class="close"></span>
-            </div>
-            <div class="skill medium">
-              JavaScript
-              <span class="close"></span>
-            </div>
-            <div class="skill weak">
-              ActionScript
-              <span class="close"></span>
-            </div>
+          <div class="skill weak">
+            ActionScript
+            <span class="close"></span>
           </div>
-          <div class="add-skills-container">
-            <div class="add-skills">Add skills</div>
-            <select>
-              <option value="strong">Strong</option>
-              <option value="medium">Medium</option>
-              <option value="weak">Weak</option>
-            </select>
-            <span class="ok-button" id="addSkillBtn"></span>
-          </div>
-        </section>
-        <div class="buttons">
-          <button class="btn btn-print" type="button" onclick="window.print()">Print this page</button>
         </div>
-      </header>
-      <section class="clearfix">
-        <div class="item">
-          <section class="item-title">
-            Portfolio
-            <div class="additional">PHT, Ruby, Javascript</div>
-          </section>
-          <ul>
-            <li><b>NavalPlan</b>, PHP, Ruby</li>
-            <li><b>MyTime</b>, Javascript</li>
-            <li><b>Formidable</b>, PHP, Ruby</li>
-            <li><b>MyTime</b>, Javascript</li>
-            <li><b>Monsoon</b>, ActionScript</li>
-          </ul>
-        </div>
-        <div class="item">
-          <section class="item-title">Experience</section>
-          <ul>
-            <li><b>PHP</b>, 6 years</li>
-            <li><b>Ruby</b>, 7 years</li>
-            <li><b>Javascript</b>, 4 years</li>
-            <li><b>ActionScript</b>, 3 years</li>
-          </ul>
-        </div>
-        <div class="item sample-code">
-          <section class="item-title">Sample code and algorithms</section>
-        </div>
-        <div class="item divided">
-          <section class="item-title">
-            Availability
-            <div class="availability">Full-time</div>
-          </section>
-          <section>Preferred environment</section>
-          <p class="environment">Git, GitHub, vim, emacs, Jenkins, Mac OSX</p>
-        </div>
-        <div class="item quote">
-          <section class="item-title">The most amazing...</section>
-          <p>
-            ... Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua et dolore magna aliqua et dol ut labore et dolore
-            <b class="quote-author">- Martin</b>
-          </p>
-        </div>
-        <div class="item quote">
-          <section class="item-title">In clients I look for...</section>
-          <p>
-            ... Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua et dolore magna aliqua et dol ut labore et dolore
-            <b class="quote-author">- Martin</b>
-          </p>
-        </div>
-        <div class="item"></div>
-        <div class="item quote">
-          <section class="item-title">Note</section>
-          <p>... Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua et dolore magna aliqua et dol ut labore et dolore</p>
+        <div class="add-skills-container">
+          <div class="add-skills">Add skills</div>
+          <select>
+            <option value="strong">Strong</option>
+            <option value="medium">Medium</option>
+            <option value="weak">Weak</option>
+          </select>
+          <span class="ok-button" id="addSkillBtn"></span>
         </div>
       </section>
-    </article>
+      <section class="buttons">
+        <button class="btn btn-print" type="button" onclick="window.print()">Print this page</button>
+      </section>
+    </header>
+    <main class="clearfix">
+      <div class="item">
+        <section class="item-title">
+          <h3>Portfolio</h3>
+          <div class="additional">PHT, Ruby, Javascript</div>
+        </section>
+        <ul>
+          <li><b>NavalPlan</b>, PHP, Ruby</li>
+          <li><b>MyTime</b>, Javascript</li>
+          <li><b>Formidable</b>, PHP, Ruby</li>
+          <li><b>MyTime</b>, Javascript</li>
+          <li><b>Monsoon</b>, ActionScript</li>
+        </ul>
+      </div>
+      <div class="item">
+        <section class="item-title">
+          <h3>Experience</h3>
+        </section>
+        <ul>
+          <li><b>PHP</b>, 6 years</li>
+          <li><b>Ruby</b>, 7 years</li>
+          <li><b>Javascript</b>, 4 years</li>
+          <li><b>ActionScript</b>, 3 years</li>
+        </ul>
+      </div>
+      <div class="item sample-code">
+        <section class="item-title">
+          <h3>Sample code and algorithms</h3>
+        </section>
+      </div>
+      <div class="item divided">
+        <section class="item-title">
+          <h3>Availability</h3>
+          <div class="availability">Full-time</div>
+        </section>
+        <section>
+          <h3>Preferred environment</h3>
+          <p class="environment">Git, GitHub, vim, emacs, Jenkins, Mac OSX</p>
+        </section>
+      </div>
+      <div class="item quote">
+        <section class="item-title">
+          <h3>The most amazing...</h3>
+        </section>
+        <p>
+          ... Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua et dolore magna aliqua et dol ut labore et dolore
+          <b class="quote-author">- Martin</b>
+        </p>
+      </div>
+      <div class="item quote">
+        <section class="item-title">
+          <h3>In clients I look for...</h3>
+        </section>
+        <p>
+          ... Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua et dolore magna aliqua et dol ut labore et dolore
+          <b class="quote-author">- Martin</b>
+        </p>
+      </div>
+      <div class="item"></div>
+      <div class="item quote">
+        <section class="item-title">
+          <h3>Note</h3>
+        </section>
+        <p>... Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua et dolore magna aliqua et dol ut labore et dolore</p>
+      </div>
+    </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="all.js"></script>
